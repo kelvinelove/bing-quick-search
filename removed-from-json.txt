@@ -1,0 +1,8 @@
+"key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAo36BZOxxtxynj1oP2hUIO3VdW+02CLQFPg8KvsQJ/jFx3JtqFNx6GYtkjzOj4jnLXV4qom4dNtPSqt3YnWJapxe4MaP2QinTM4MTS1N0WwQavyd8x5zvNBrLeFGKCV0gS/ASk/Y98jNedYr6EVr/uB0V3FWMMYhSQiBFMyyT6WU1DWb1JTxtTujMZ0Ak5NZYd5T+VjzJlu42wnx5wyXEITBvbA+GR4EfBOHP+eUA1a5qkiLj5OfX1IFQwLGPAgBZ5VT/d2e54EK+uld8U7Xdv4jg96ozeDK2kmhKygWq1Mj2DEHo/wvRRh4bb4x816SlpdbQ+XkBXjahUrMqWMJfVwIDAQAB",
+
+
+
+
+
+
+"update_url": "https://clients2.google.com/service/update2/crx",
