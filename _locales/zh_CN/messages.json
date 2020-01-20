@@ -1,13 +1,13 @@
 {
    "extDescription": {
       "description": "Description of this extension",
-      "message": "Bing 搜索-在网页上搜索关于文字、urls或某张图片的更多信息"
+      "message": "Bing快速搜索：右键单击所选内容或图像并搜索，而无需离开当前窗口"
    },
    "extName": {
       "description": "Extension name",
-      "message": "Bing 搜索"
+      "message": "Bing快速搜索"
    },
    "lookupContextMenuTitle": {
-      "message": "Bing 搜索"
+      "message": "Bing快速搜索"
    }
 }
