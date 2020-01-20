@@ -11,6 +11,7 @@
    "default_locale": "en",
    "description": "__MSG_extDescription__",
    "icons": {
+      "150": "images/bing-150x150.png",
       "128": "images/bing-128x128.png",
       "16": "images/bing-16x16.png",
       "48": "images/bing-48x48.png"
