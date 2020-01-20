@@ -1,0 +1,126 @@
+﻿<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Options</title>
+  <link rel="stylesheet" href="options.css" />
+  <script src="/src/commondefs.js"></script>
+  <script src="/src/messenger.js"></script>
+  <script src="/src/option/optdatasource.js"></script>
+  <script src="/src/option/optmanifest.js"></script>
+  <script src="/src/option/optbinding.js"></script>
+  <script src="/src/option/optpage.js"></script>
+</head>
+<body>
+  <form id="optionsForm">
+    <div class="panel">
+      <h1>Settings</h1>
+      <div class="group">
+        <h2>Allowlist</h2>
+        <ul>
+          <li>
+            <label>
+              Host<br />
+              <input type="text" id="allowlist_host" placeholder="<empty>" size="40" />
+            </label>
+          </li>
+          <li>
+            <label>
+              Endpoint<br />
+              <input type="text" id="allowlist_endpoint" placeholder="<empty>" size="40" />
+            </label>
+          </li>
+          <li>
+            <label>
+              Additional Parameters<br />
+              <input type="text" id="allowlist_params" placeholder="<empty>" size="40" />
+            </label>
+          </li>
+          <li>
+            <label><input type="checkbox" id="allowlist_bypass" title="Bypass allowlist check" />Bypass allowlist check</label>
+            <div id="allowlist_bypass_hint" class="inlinehint" data-hintstate="off">Warning: <br />Bypassing allowlist will send request on each navigation. <br />Experiment only.</div>
+          </li>
+        </ul>
+      </div>
+      <div class="group">
+        <h2>Query</h2>
+        <ul>
+          <li>
+            <label>
+              Host<br />
+              <input type="text" id="query_host" placeholder="<empty>" size="40" />
+            </label>
+          </li>
+          <li>
+            <label>
+              Endpoint<br />
+              <input type="text" id="query_endpoint" placeholder="<empty>" size="40" />
+            </label>
+          </li>
+          <li>
+            <label>
+              Additional URL Parameters<br />
+              <input type="text" id="query_params" placeholder="<empty>" size="40" />
+            </label>
+          </li>
+        </ul>
+      </div>
+      <div class="group">
+        <h2>Lookup</h2>
+        <ul>
+          <li>
+            <label>
+              Host<br />
+              <input type="text" id="lookup_host" placeholder="<empty>" size="40" />
+            </label>
+          </li>
+          <li>
+            <label>
+              Endpoint (Text)<br />
+              <input type="text" id="lookup_text_endpoint" placeholder="<empty>" size="40" />
+            </label>
+          </li>
+          <li>
+            <label>
+              Endpoint (Image)<br />
+              <input type="text" id="lookup_image_endpoint" placeholder="<empty>" size="40" />
+            </label>
+          </li>
+          <li>
+            <label>
+              Endpoint (Link)<br />
+              <input type="text" id="lookup_link_endpoint" placeholder="<empty>" size="40" />
+            </label>
+          </li>
+          <li>
+            <label>
+              Additional URL Parameters<br />
+              <input type="text" id="lookup_params_url" placeholder="<empty>" size="40" />
+            </label>
+          </li>
+          <li>
+            <label>
+              Additional POST Parameters. This will override any previous post values.<br />
+              input as & seperated key value pairs. (key1=value1&key2=value2) <br />
+              <input type="text" id="lookup_params_post" placeholder="<empty>" size="40"/>
+            </label>
+          </li>
+        </ul>
+      </div>
+      <div class="group">
+        <h2>&nbsp;</h2>
+        <ul>
+          <li>
+            <input type="button" name="submit" value="Apply" />
+          </li>
+          <li>
+            <input type="button" name="reset" value="Reset" />
+          </li>
+          <li>
+            <input type="button" name="default" value="Default" />
+          </li>
+        </ul>
+      </div>
+    </div>
+  </form>
+</body>
+</html>

@@ -1,0 +1,11 @@
+{
+   "extDescription": {
+      "message": "Bing Buscar – Busca en la web para más información sobre texto, enlaces o una imagen específica."
+   },
+   "extName": {
+      "message": "Bing Buscar"
+   },
+   "lookupContextMenuTitle": {
+      "message": "Bing Buscar"
+   }
+}

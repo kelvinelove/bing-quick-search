@@ -1,0 +1,158 @@
+﻿html, body
+{
+    border: 0;
+    margin: 0;
+    padding: 0;
+    direction: __MSG_@@bidi_dir__;
+    overflow:hidden;
+}
+
+.icon16 {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin: 13px;
+    background: url("/images/bing-logo.svg") no-repeat;
+}
+
+.icon42 {
+    display: inline-block;
+    height: 24px;
+    width: 58px;
+    background: url("/images/bing-logo-wide.svg") no-repeat;
+}
+
+.headertext {
+    font-size: 13px;
+    color: black;
+    font-family: Arial, sans-serif;
+    line-height: 16px;
+}
+
+#mainpage[data-state="notify"],
+#mainpage #notifypane
+{
+    display: inline-block;
+}
+
+#mainpage[data-state="full"] {
+    display: block;
+}
+
+#mainpage[data-state="full"],
+#mainpage[data-state="full"] #fullpane
+{
+    height: 100%;
+}
+
+#mainpage #fullpane
+{
+    display: flex;
+}
+
+#mainpage,
+#mainpage[data-state="notify"] #fullpane,
+#mainpage[data-state="full"] #notifypane
+{
+    display: none;
+}
+
+#notifypane {
+    border: 1px solid darkgray;
+    cursor: pointer;
+    height: 42px;
+    opacity: 1;
+    padding: 0 10px 0 0;
+    text-align: __MSG_@@bidi_start_edge__;
+    transition: opacity 0.2s;
+    background-color: #EBF4FA;
+    white-space: nowrap;
+    -webkit-user-select: none;
+}
+
+#notifypane .icon16 {
+    vertical-align: middle;
+}
+
+#notifypane[data-style="small"] {
+    padding: 0;
+    opacity: 0.4;
+}
+
+#notifypane:hover {
+    opacity: 1;
+}
+
+#notifypane[data-style="small"] #notifytext{
+    display: none;
+}
+
+#notifytext {
+    display: inline-block;
+    white-space:normal;
+    max-width:250px;
+}
+
+#fullpane {
+    display: flex;
+    flex-flow: column;
+    overflow: hidden;
+    width: 370px;
+}
+
+#fullpane .banner {
+    flex: 0 0 24px;
+    padding-top: 19px;
+    padding-bottom: 19px;
+    padding-__MSG_@@bidi_start_edge__: 12px;
+    padding-__MSG_@@bidi_end_edge__: 16px;
+}
+
+.hostfrm {
+    border: 0;
+    flex: 1 1 auto;
+    width: 100%;
+}
+
+.hostfrm::-webkit-scrollbar {
+    width: 10px;
+}
+
+.hostfrm::-webkit-scrollbar-thumb {
+    background-color:lightgray;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+}
+
+.hostfrm::-webkit-scrollbar-thumb:hover {
+    background-color:silver;
+}
+
+#mainpage[data-owner="athens"] #athensfrm,
+#mainpage[data-owner="lookup"] #lookupfrm
+{
+    display: block;
+}
+
+#mainpage[data-owner="lookup"] #athensfrm,
+#mainpage[data-owner="athens"] #lookupfrm
+{
+    display: none;
+}
+
+#measureCanvas {
+    display: none;
+    position: absolute;
+    top: -200px;
+    left: 0;
+    max-height: 100px;
+    width: 800px;
+}
+
+#closeSidePane {
+    width: 10px;
+    height: 10px;
+    cursor: pointer;
+    background: url("/images/close.svg") no-repeat;
+    float: __MSG_@@bidi_end_edge__;
+}

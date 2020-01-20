@@ -1,0 +1,14 @@
+{
+   "extDescription": {
+      "description": "Description of this extension",
+      "message": "Bing Lookup – Search for more info on the web about text, urls or a specific image."
+   },
+   "extName": {
+      "description": "Extension name",
+      "message": "Bing Lookup"
+   },
+   "lookupContextMenuTitle": {
+      "description": "Title to use for lookup in context menu",
+      "message": "Bing Lookup"
+   }
+}

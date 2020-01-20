@@ -1,0 +1,81 @@
+﻿.panel {
+    display: flex;
+    width: 100%;
+    flex-flow: row wrap;
+}
+    
+input[type='checkbox'] {
+    margin: 0 3px 0 0;
+    vertical-align: middle;
+}
+
+input[data-state='text0'] {
+    background-color: lightgray;
+}
+
+input[data-state='text1'] {
+    background-color: yellow;
+}
+
+input[data-state='text2'] {
+    background-color: initial;
+}
+
+input[data-state='text3'] {
+    background-color: red;
+}
+
+input[data-state='checkbox0'] {
+    background-image: linear-gradient(rgb(237, 237, 237), rgb(237, 237, 237) 38%, rgb(222, 222 ,222));
+}
+
+input[data-state='checkbox1'] {
+    background-image: linear-gradient(#fbfb33, #fbfb33 38%, rgb(255, 255, 164));
+}
+
+input[data-state='checkbox2'] {
+    background-color: white;
+    background-image: none;
+}
+
+input[data-state='checkbox3'] {
+    background-color: red;
+    background-image: none;
+}
+
+.panel > h1 {
+    border-bottom: solid 1px gray;
+    line-height: 1.5em;
+    margin: 4px 0;
+    width:100%;
+}
+
+.group {
+    width: auto;
+    flex-basis: auto;
+    margin: 4px;
+}
+
+.group h2 {
+    margin: 4px 0;
+}
+
+.group > ul {
+    list-style:none;
+    margin: 0;
+}
+
+.group > ul > li {
+    margin: 10px 0;
+}
+
+.inlinehint {
+    padding: 10px;
+    width: 170px;
+    box-sizing:border-box;
+    background-color:orange;
+}
+
+.inlinehint[data-hintstate='off'] {
+    display:none;
+}
