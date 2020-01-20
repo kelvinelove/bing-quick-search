@@ -1,11 +1,11 @@
 {
    "extDescription": {
-      "message": "Bing Nachschlagen – Suchen Sie mehr Informationen im Web über Texte, URLs oder ein spezielles Bild."
+      "message": "Bing-Schnellsuche - Klicken Sie mit der rechten Maustaste auf eine Auswahl oder ein Bild und suchen Sie, ohne das aktuelle Fenster zu verlassen."
    },
    "extName": {
-      "message": "Bing Nachschlagen"
+      "message": "Bing-Schnellsuche"
    },
    "lookupContextMenuTitle": {
-      "message": "Bing Nachschlagen"
+      "message": "Bing-Schnellsuche"
    }
 }
