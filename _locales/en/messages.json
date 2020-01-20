@@ -1,14 +1,14 @@
 {
    "extDescription": {
       "description": "Description of this extension",
-      "message": "Bing Lookup – Search for more info on the web about text, urls or a specific image."
+      "message": "Bing Quick Search – Right click on a selection or image, and search, without leaving your current window."
    },
    "extName": {
       "description": "Extension name",
-      "message": "Bing Lookup"
+      "message": "Bing Quick Search"
    },
    "lookupContextMenuTitle": {
       "description": "Title to use for lookup in context menu",
-      "message": "Bing Lookup"
+      "message": "Bing Quick Search"
    }
 }
