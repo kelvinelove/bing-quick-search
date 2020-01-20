@@ -1,11 +1,11 @@
 {
    "extDescription": {
-      "message": "Bing Lookup - Search for more info on the web about text, urls or a specific image."
+      "message": "Bing Quick Search - Right click on a selection or image, and search, without leaving your current window."
    },
    "extName": {
-      "message": "Bing Lookup"
+      "message": "Bing Quick Search"
    },
    "lookupContextMenuTitle": {
-      "message": "Bing Lookup"
+      "message": "Bing Quick Search"
    }
 }
