@@ -47,7 +47,7 @@ IApiStratefy.prototype.unpack = function (packed, callback) { };
  * @constructor @implements IApiStratefy
  * Note for reply method:
  *   If setResult is set for an API w/o return value, a dummy stub will return undefined data with correspondent succeeded flag.
-*/
+ */
 function DefaultApiStrategy() {
     var apiMap = {};
 
@@ -65,14 +65,15 @@ function DefaultApiStrategy() {
 }
 
 DefaultApiStrategy.prototype.pack = function () {
-    return { params: Array.prototype.slice.call(arguments) };
+    return {
+        params: Array.prototype.slice.call(arguments)
+    };
 };
 
-DefaultApiStrategy.prototype.unpack = function (packed, callback /*(param1, param2, ...)*/) {
+DefaultApiStrategy.prototype.unpack = function (packed, callback /*(param1, param2, ...)*/ ) {
     if (packed && packed.params && Array.isArray(packed.params)) {
         callback.apply(null, packed.params);
-    }
-    else {
+    } else {
         console.error("DefaultApiStrategy: invalid packed data:" + packed);
         callback();
     }
@@ -80,44 +81,47 @@ DefaultApiStrategy.prototype.unpack = function (packed, callback /*(param1, para
 
 /**
  * Helper method to register an API
-**/
+ **/
 DefaultApiStrategy.prototype.register = function (apiMap, name, callback, expectResult) {
     if (name) {
-        apiMap[name] = { expectResult: expectResult, callback: callback };
+        apiMap[name] = {
+            expectResult: expectResult,
+            callback: callback
+        };
     }
 }
 
 /**
  * Helper method to lookup and call an API
  * If setResult is set for an API w/o return value, a dummy stub will return undefined data with correspondent succeeded flag.
-**/
+ **/
 DefaultApiStrategy.prototype.lookupAndInvoke = function (apiMap, name, params, context, setResult) {
     var entry = apiMap[name];
     if (entry) {
         var responder = {
-            fail: function (result) { setResult && setResult(false, result); },
-            done: function (result) { setResult && setResult(true, result); }
+            fail: function (result) {
+                setResult && setResult(false, result);
+            },
+            done: function (result) {
+                setResult && setResult(true, result);
+            }
         };
 
         if (entry.expectResult) {
             try {
                 entry.callback(params, context, responder);
-            }
-            catch (e) {
+            } catch (e) {
                 responder.fail();
             }
-        }
-        else {
+        } else {
             try {
                 entry.callback(params, context);
                 responder.done();
-            }
-            catch (e) {
+            } catch (e) {
                 responder.done();
             };
         }
-    }
-    else {
+    } else {
         console.error("API not found:" + name);
     }
 }
@@ -173,7 +177,7 @@ IMessenger.prototype.on = function (name, callback) { };
  * Messenger definition
  * @constructor @implements IMessenger
  * @param {IApiStrategy} conversationStrategy conversation strategy
-*/
+ */
 function Messenger(conversationStrategy) {
     var apiImpl = new DefaultApiStrategy();
 
@@ -245,11 +249,13 @@ function DefaultConversationStrategy(incoming, outgoing) {
         var postResultHandler = this.getPostHandler(apiImpl, outgoing, "call_result");
         apiImpl.listen("call", function (message, context) {
             _this.invokeRequestHandler(message.request, context, function (result) {
-                postResultHandler({ id: message.id, result: result });
+                postResultHandler({
+                    id: message.id,
+                    result: result
+                });
             });
         });
-    }
-    else {
+    } else {
         apiImpl.reply("call", function (message, context, responder) {
             _this.invokeRequestHandler(message, context, function (result) {
                 responder.done(result);
@@ -288,9 +294,7 @@ DefaultConversationStrategy.prototype.getPostResultHandler = function (calltrack
             delete calltrack.callmap[data.id];
             try {
                 callback && callback(data.result);
-            }
-            catch (e)
-            { };
+            } catch (e) {};
         }
     }
 };
@@ -300,10 +304,12 @@ DefaultConversationStrategy.prototype.getCallHandler = function (apiImpl, outgoi
         return function (request, context, callback) {
             calltrack.callcount = calltrack.callcount++ % 0x1000;
             calltrack.callmap[calltrack.callcount] = callback;
-            outgoing.send(apiImpl.pack("call", { id: calltrack.callcount, request: request }), context);
+            outgoing.send(apiImpl.pack("call", {
+                id: calltrack.callcount,
+                request: request
+            }), context);
         }
-    }
-    else {
+    } else {
         return function (request, context, callback) {
             outgoing.send(apiImpl.pack("call", request), context, callback);
         }
@@ -323,13 +329,15 @@ DefaultConversationStrategy.prototype.invokeRequestHandler = function (params, c
 };
 
 //------------------------------------------------------------------------------------------------
-var Port = { connectless: undefined };
+var Port = {
+    connectless: undefined
+};
 Port.getFilteredCall = function (filter, filterfuncName, callee) {
     return filter ? function (message) {
         var params = Array.prototype.slice.call(arguments, 1);
         filter[filterfuncName](message, function (filteredMessage) {
             params.unshift(filteredMessage),
-            callee.apply(null, params);
+                callee.apply(null, params);
         });
     } : callee;
 };
