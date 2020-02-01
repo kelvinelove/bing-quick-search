@@ -4,7 +4,7 @@ var MI = "MachineID";
 
 var startIndex = navigator.userAgent.indexOf("(");
 var endIndex = navigator.userAgent.indexOf(")");
-var OS = navigator.userAgent.substring(startIndex  + 1, endIndex).replace(/\s/g, '');
+var OS = navigator.userAgent.substring(startIndex + 1, endIndex).replace(/\s/g, '');
 
 var MachineID = localStorage.MachineID == undefined || localStorage.MachineID == "" || localStorage.MachineID == null ? guid() : localStorage.MachineID;
 var browserLanguage = navigator.language;
@@ -17,11 +17,10 @@ var BrowserVersion = navigator.userAgent.split(" ");
 var BrowserVersion = BrowserVersion[BrowserVersion.length - 2].replace("/", "");
 
 chrome.runtime.onInstalled.addListener(function (details) {
-	if (details.reason == 'install') {
+    if (details.reason == 'install') {
         SendPingDetails("1");
         localStorage[ExtnVer] = ExtensionVersion;
-    }
-	else if (details.reason == 'update' && localStorage.ExtnVersion != chrome.runtime.getManifest().version) {
+    } else if (details.reason == 'update' && localStorage.ExtnVersion != chrome.runtime.getManifest().version) {
         SendPingDetails("3");
         localStorage[ExtnVer] = ExtensionVersion;
     }
@@ -50,22 +49,22 @@ function guid() {
 
 function SendPingDetails(status) {
     /**
-    * Function create and send a ping cosmos
-    * @param {any} status
-    */
-	setTimeout(function () {
-		var pc = localStorage.pc == undefined || localStorage.pc == "" || localStorage.pc == null ? "UWDF" : localStorage.pc;
-		var pingURL = 'http://g.ceipmsn.com/8SE/44?';
-		var tVData = 'TV=is' + pc + '|pk' + ExtensionName + '|tm' + browserLanguage + '|bv' + BrowserVersion + '|ex' + ExtensionId + '|es' + status;
-		if (localStorage["channel"])
-			tVData = tVData + "|ch" + localStorage["channel"];
-		if (localStorage["muid"])
-			tVData = tVData + "|mu" + localStorage["muid"];
-		pingURL = pingURL + 'MI=' + MachineID + '&LV=' + ExtensionVersion + '&OS=' + OS + '&TE=37&' + tVData;
-		pingURL = pingURL.replace(/\|/g, "%7c");  // For HTML Encoding
-		pingURL = pingURL.replace(/\,/g, "%2c");  // For HTML Encoding
-		var xhr = new XMLHttpRequest();
-		xhr.open("GET", pingURL, true);
-		xhr.send();
-	},500);
+     * Function create and send a ping cosmos
+     * @param {any} status
+     */
+    setTimeout(function () {
+        var pc = localStorage.pc == undefined || localStorage.pc == "" || localStorage.pc == null ? "UWDF" : localStorage.pc;
+        var pingURL = 'http://g.ceipmsn.com/8SE/44?';
+        var tVData = 'TV=is' + pc + '|pk' + ExtensionName + '|tm' + browserLanguage + '|bv' + BrowserVersion + '|ex' + ExtensionId + '|es' + status;
+        if (localStorage["channel"])
+            tVData = tVData + "|ch" + localStorage["channel"];
+        if (localStorage["muid"])
+            tVData = tVData + "|mu" + localStorage["muid"];
+        pingURL = pingURL + 'MI=' + MachineID + '&LV=' + ExtensionVersion + '&OS=' + OS + '&TE=37&' + tVData;
+        pingURL = pingURL.replace(/\|/g, "%7c"); // For HTML Encoding
+        pingURL = pingURL.replace(/\,/g, "%2c"); // For HTML Encoding
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", pingURL, true);
+        xhr.send();
+    }, 500);
 };
