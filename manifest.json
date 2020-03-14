@@ -1,38 +1,38 @@
 {
-   "background": {
-      "persistence": true,
-      "scripts": [ "ping.js", "src/commondefs.js", "src/messenger.js", "src/option/optdatasource.js", "src/option/optmanifest.js", "src/filtermgr.js", "src/tabmodel.js", "src/dataprovider.js", "src/coordinator.js", "src/view.js", "src/bootstrap.js", "src/lookupview.js", "src/contextExtractor.js" ]
-   },
-   "content_scripts": [ {
-      "all_frames": true,
-      "js": [ "src/messenger.js", "src/knowledge/contextextraction.js", "src/inject/lookupContextExtractor.js" ],
-      "matches": [ "*://*/*" ]
-   } ],
-   "default_locale": "en",
-   "description": "__MSG_extDescription__",
-   "icons": {
-      "150": "images/bing-150x150.png",
-      "128": "images/bing-128x128.png",
-      "16": "images/bing-16x16.png",
-      "48": "images/bing-48x48.png"
-   },
-   
-   "manifest_version": 2,
-   "name": "__MSG_extName__",
-   "page_action": {
-      "default_icon": {
-         "19": "images/pageaction_transparent_19x19.png"
-      }
-   },
-   "permissions": [ "contextMenus", "tabs", "storage", "unlimitedStorage", "webNavigation", "webRequest", "webRequestBlocking", "http://*/*", "https://*/*" ],
-   
-    
-    
-    
-    
-    
-    
-    
-   "version": "1.0.1",
-   "web_accessible_resources": [ "/src/inject/pane.html", "/host" ]
+    "background": {
+        "persistence": true,
+        "scripts": ["ping.js", "src/commondefs.js", "src/messenger.js", "src/option/optdatasource.js", "src/option/optmanifest.js", "src/filtermgr.js", "src/tabmodel.js", "src/dataprovider.js", "src/coordinator.js", "src/view.js", "src/bootstrap.js", "src/lookupview.js", "src/contextExtractor.js"]
+    },
+    "content_scripts": [{
+        "all_frames": true,
+        "js": ["src/messenger.js", "src/knowledge/contextextraction.js", "src/inject/lookupContextExtractor.js"],
+        "matches": ["*://*/*"]
+   }],
+    "default_locale": "en",
+    "description": "__MSG_extDescription__",
+    "icons": {
+        "150": "images/bing-150x150.png",
+        "128": "images/bing-128x128.png",
+        "16": "images/bing-16x16.png",
+        "48": "images/bing-48x48.png"
+    },
+
+    "manifest_version": 2,
+    "name": "__MSG_extName__",
+    "page_action": {
+        "default_icon": {
+            "19": "images/pageaction_transparent_19x19.png"
+        }
+    },
+    "permissions": ["contextMenus", "tabs", "storage", "unlimitedStorage", "webNavigation", "webRequest", "webRequestBlocking", "http://*/*", "https://*/*"],
+
+
+
+
+
+
+
+
+    "version": "1.0.1",
+    "web_accessible_resources": ["/src/inject/pane.html", "/host"]
 }
